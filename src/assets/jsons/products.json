@@ -2,12 +2,12 @@
   {
       "idPiece": 1,
       "product_id": null,
-      "libelle": "Produit-1",
+      "libelle": "Acide nitrique",
       "category": {
           "id": 1,
           "category_id": "ezLAK3Oa",
-          "description": "Categorie-1",
-          "observation": "Description-1",
+          "description": "Acide",
+          "observation": "Description",
           "created_at": "2022-12-08T15:57:14Z",
           "updated_at": null,
           "productsLists": []
@@ -35,12 +35,12 @@
   {
     "idPiece": 2,
     "product_id": null,
-    "libelle": "Produit-2",
+    "libelle": "Méthanol",
     "category": {
-        "id": 1,
+        "id": 2,
         "category_id": "ezLAK3Oa",
-        "description": "Categorie-1",
-        "observation": "Description-1",
+        "description": "Solvant",
+        "observation": "Description",
         "created_at": "2022-12-08T15:57:14Z",
         "updated_at": null,
         "productsLists": []
@@ -68,12 +68,12 @@
 {
   "idPiece": 3,
   "product_id": null,
-  "libelle": "Produit-3",
+  "libelle": "Acide chlorhydrique",
   "category": {
       "id": 1,
       "category_id": "ezLAK3Oa",
-      "description": "Categorie-1",
-      "observation": "Description-1",
+      "description": "Acide",
+      "observation": "Description",
       "created_at": "2022-12-08T15:57:14Z",
       "updated_at": null,
       "productsLists": []
