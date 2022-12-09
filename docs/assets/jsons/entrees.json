@@ -3,7 +3,7 @@
     "id": 2,
     "entreeID": "en-dBJka88T",
     "dateEntree": "2022-12-09T04:12:13.955956Z",
-    "refCommande": "",
+    "refCommande": "FX1254",
     "product": {
       "idPiece": 1,
       "product_id": null,
@@ -56,7 +56,7 @@
     "id": 1,
     "entreeID": "en-SHoNTHlz",
     "dateEntree": "2022-12-09T04:11:24.800944Z",
-    "refCommande": "",
+    "refCommande": "3DF142KL",
     "idPiece": 2,
     "product_id": null,
     "libelle": "Produit-2",
@@ -77,6 +77,15 @@
     "updated_at": null,
     "expirationDate": "2022-12-27T00:12:00Z",
     "dateEntree": "2022-12-17T00:12:00Z",
+    "vendor": {
+      "id": 2,
+      "name": "Fournisseur-2",
+      "observation": "",
+      "created_at": "2022-12-09T03:59:32.163519Z",
+      "updated_at": null,
+      "entrees": [],
+      "vendorId": "vn-KG4lciy9CY"
+    },
     "entreesList": [],
     "sortieslist": [],
     "fabrication": "fabricant...",
@@ -90,7 +99,11 @@
     "emplacments": "physique"
 },
 {
-  "idPiece": 3,
+  "id": 3,
+  "entreeID": "en-SHoNTHlz",
+  "dateEntree": "2022-12-09T04:11:24.800944Z",
+  "refCommande": "31ML142KL",
+  "idPiece": 2,
   "product_id": null,
   "libelle": "Produit-3",
   "category": {
@@ -101,21 +114,34 @@
       "created_at": "2022-12-08T15:57:14Z",
       "updated_at": null,
       "productsLists": []
-
-    },
-    "vendor": {
-      "id": 1,
-      "name": "Fournisseur-1",
-      "observation": "",
-      "created_at": "2022-12-09T03:59:24.163519Z",
-      "updated_at": null,
-      "entrees": [],
-      "vendorId": "vn-mX0I8ANwPD"
-    },
+  },
+  "initialStock": 10,
+  "alertThreshold": 7,
+  "comments": "Observations....",
+  "stockFinal": 10,
+  "created_at": "2022-12-08T16:01:09Z",
+  "updated_at": null,
+  "expirationDate": "2022-12-27T00:12:00Z",
+  "dateEntree": "2022-12-17T00:12:00Z",
+  "vendor": {
+    "id": 2,
+    "name": "Fournisseur-2",
     "observation": "",
-    "quantite": 6,
-    "puHt": 4,
-    "created_at": "2022-12-09T04:11:24.800944Z",
-    "updated_at": null
-  }
+    "created_at": "2022-12-09T03:59:32.163519Z",
+    "updated_at": null,
+    "entrees": [],
+    "vendorId": "vn-KG4lciy9CY"
+  },
+  "entreesList": [],
+  "sortieslist": [],
+  "fabrication": "fabricant...",
+  "nlot": "1245JJL",
+  "codeLot": "12458S",
+  "prix": 3,
+  "codeProduit": "12DGFR82",
+  "ncas": "124",
+  "danger": "assets/media/Danger/icons/Inflammable-icon.png",
+  "conditionStockage": "Conditions....",
+  "emplacments": "physique"
+}
 ]
