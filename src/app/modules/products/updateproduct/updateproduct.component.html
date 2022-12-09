@@ -1,0 +1,342 @@
+<div class="card mb-5 mb-xl-10">
+  <!--begin::Card header-->
+  <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+    <!--begin::Card title-->
+    <div class="card-title m-0">
+      <h3 class="fw-bolder m-0">Information Produit</h3>
+    </div>
+    <!--end::Card title-->
+  </div>
+  <!--begin::Card header-->
+  <!--begin::Content-->
+  <div id="kt_account_settings_profile_details" class="collapse show">
+    <!--begin::Form-->
+    <form id="kt_account_profile_details_form" [formGroup]="productForm" (ngSubmit)="submit($event)" class="form">
+      <!--begin::Card body-->
+      <div class="card-body border-top p-9">
+
+        <!--begin::Input group-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-4 col-form-label required fw-bold fs-6">Nom du Produit</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <!--begin::Row-->
+            <div class="row">
+                <input formControlName="name" [(ngModel)]="productModel.libelle" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre nom du produit" value="" />
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-4 col-form-label  fw-bold fs-6">Code du Produit</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <!--begin::Row-->
+            <div class="row">
+                <input formControlName="codeProduit" [(ngModel)]="productModel.codeProduit" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre code du produit" value="" />
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--begin::Input group-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-4 col-form-label required fw-bold fs-6">
+            <span class="">Type de produit</span>
+            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="selectionner le type du produit"></i>
+          </label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8 fv-row">
+            <ng-select formControlName="categoryid" [(ngModel)]="productModel.category.id">
+              <ng-option *ngFor="let category of categories" [value]="category.id">{{category.description}}</ng-option>
+
+            </ng-select>
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-4 col-form-label  fw-bold fs-6">N°CAS</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8">
+            <!--begin::Row-->
+            <div class="row">
+                <input formControlName="ncas" [(ngModel)]="productModel.ncas" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre N°CAS du produit" value="" />
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--begin::Input group-->
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-4 col-form-label fw-bold fs-6">
+            <span class="">Danger</span>
+          </label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-8 fv-row">
+            <ng-select formControlName="danger" [(ngModel)]="productModel.danger" [placeholder]="'Sélectionnez le danger'">
+                <ng-option  value="assets/media/Danger/icons/Toxique-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Toxique-icon.png" width="40px" height="40px"/>
+                  Toxique</ng-option>
+
+                <ng-option  value="assets/media/Danger/icons/Inflammable-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Inflammable-icon.png" width="40px" height="40px"/>
+                Inflammable</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Gaz sous pression-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Gaz sous pression-icon.png" width="40px" height="40px"/>
+                Gaz sous pression</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Polluant pour l'environnement-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Polluant pour l'environnement-icon.png" width="40px" height="40px"/>
+                Polluant pour l'environnement</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Produit dangereux Pour la santé-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Produit dangereux Pour la santé-icon.png" width="40px" height="40px"/>
+                Produit dangereux Pour la santé</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Dangereux nocif et irritant-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Dangereux nocif et irritant-icon.png" width="40px" height="40px"/>
+                Dangereux nocif et irritant</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Corrosif-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Corrosif-icon.png" width="40px" height="40px"/>
+                Corrosif</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Comburant-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Comburant-icon.png" width="40px" height="40px"/>
+                Comburant</ng-option>
+
+              <ng-option  value="assets/media/Danger/icons/Explosif-icon.png"><img src="http://localhost/app-cmtc/assets/media/Danger/icons/Explosif-icon.png" width="40px" height="40px"/>
+                Explosif</ng-option>
+            </ng-select>
+          </div>
+          <!--end::Col-->
+        </div>
+        <div class="row mb-6">
+
+          <!--begin::Content-->
+
+            <!--begin::Card body-->
+            <div class="card-body border-top p-9">
+              <div class="card-title m-0">
+                <h3 class="fw-bolder m-0">Autres Informations</h3>
+              </div>
+              <!--begin::Notice-->
+              <br>
+              <div class="bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                      <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true"
+                                             (closed)="panelOpenState = false">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                              cliquez pour afficher autres informations
+                            </mat-panel-title>
+
+                          </mat-expansion-panel-header>
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                              <span class="">Date d'Entrer</span>
+                              <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Date d'Entrer"></i>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                            <!-- <ng2-flatpickr
+                            formControlName="dateEntree"
+                            [(ngModel)]="selectedDateEntree"
+                            placeholder="Date d'Entrer"
+                            [config]="exampleOptions"></ng2-flatpickr> -->
+                              <!-- <input matInput [matDatepicker]="picker">
+                              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker> -->
+
+                              <mat-form-field appearance="fill" >
+                                <mat-label>Date d'Entrer</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="dateEntree" [(ngModel)]="productModel.dateEntree">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+
+
+                          </div>
+                            <!--end::Col-->
+                          </div>
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                              <span class="">Date d'expiration</span>
+                              <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Date d'expiration du produit"></i>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                            <!-- <ng2-flatpickr
+                            formControlName="expirationDate"
+                            [(ngModel)]="selectedExpirationDate"
+                            placeholder="Date D'expiration"
+                            [config]="exampleOptions"></ng2-flatpickr> -->
+
+                            <mat-form-field appearance="fill" >
+                              <mat-label>Date D'expiration</mat-label>
+                              <input matInput [matDatepicker]="picker2" formControlName="expirationDate" [(ngModel)]="productModel.expirationDate">
+                              <mat-hint>MM/DD/YYYY</mat-hint>
+                              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                              <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                          </div>
+                            <!--end::Col-->
+                          </div>
+
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                              <span class="">Stock initial</span>
+                              <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Stock initial du produit"></i>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <input formControlName="stockInial" [(ngModel)]="productModel.initialStock" type="number" class="form-control form-control-lg form-control-solid" placeholder="Entre Stock inital" />
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <!--end::Input group-->
+                          <!--begin::Input group-->
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Seuil d'alerte</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <input formControlName="seuilAlerte" [(ngModel)]="productModel.alertThreshold" type="number" class="form-control form-control-lg form-control-solid" placeholder="Company website"/>
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <!--end::Input group-->
+                          <!--begin::Input group-->
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Condition de Stockage</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <textarea formControlName="conditionStockage"  [(ngModel)]="productModel.conditionStockage" class="form-control form-control-solid" rows="3" name="target_details" placeholder="Entrer Condition de Stockage"></textarea>
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <!--end::Input group-->
+                          <!--begin::Input group-->
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">
+                              <span class="">Emplacment</span>
+                              <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Select Emplacment"></i>
+                            </label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <ng-select formControlName="emplacments" [(ngModel)]="productModel.emplacments">
+                                <ng-option  value="chimie">Chimie</ng-option>
+                                <ng-option value="physique">physique</ng-option>
+                              </ng-select>
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <!--end::Input group-->
+                          <!--begin::Input group-->
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Observation</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <textarea formControlName="observation"  [(ngModel)]="productModel.comments" class="form-control form-control-solid" rows="3" name="target_details" placeholder="Entrer Observation"></textarea>
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <!--end::Input group-->
+                          <!--begin::Input group-->
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Code Lot</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                              <!--begin::Row-->
+                              <div class="row">
+                                  <input formControlName="codeLot" [(ngModel)]="productModel.codeLot" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre code Lot du produit" value="" />
+                              </div>
+                              <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                          </div>
+
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label  fw-bold fs-6">Fabricant</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                              <!--begin::Row-->
+                              <div class="row">
+                                  <input formControlName="fabrication" [(ngModel)]="productModel.fabrication" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre fabricant du produit" value="" />
+                              </div>
+                              <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                          <label class="col-lg-4 col-form-label fw-bold fs-6">N°Lot </label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                              <!--begin::Row-->
+                              <div class="row">
+                                  <input formControlName="nlot" [(ngModel)]="productModel.nlot" type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Entre N° Lot du produit" value="" />
+                              </div>
+                              <!--end::Row-->
+                            </div>
+                            <!--end::Col-->
+                          </div>
+                          <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold fs-6">Prix</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                              <input formControlName="prix" [(ngModel)]="productModel.prix" type="number" class="form-control form-control-lg form-control-solid" placeholder="Entrer Prix"  />
+                            </div>
+                            <!--end::Col-->
+                          </div>
+
+                        </mat-expansion-panel>
+                      </mat-accordion>
+              </div>
+              <!--end::Notice-->
+            <!--end::Card body-->
+          </div>
+          <!--end::Content-->
+        </div>
+
+      </div>
+      <!--end::Card body-->
+      <!--begin::Actions-->
+      <div class="card-footer d-flex justify-content-end py-6 px-9">
+        <button type="reset" [routerLink]="[ '/products']" class="btn btn-light btn-active-light-primary me-2">Retour</button>
+        <button [disabled]="productForm.invalid" type="submit" ng- class="btn btn-primary" id="kt_account_profile_details_submit">Enregistrer</button>
+      </div>
+      <!--end::Actions-->
+    </form>
+    <!--end::Form-->
+  </div>
+  <!--end::Content-->
+</div>
+<!--end::Basic info-->

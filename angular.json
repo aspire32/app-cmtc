@@ -17,32 +17,52 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-school",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/styles.css",
+              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css",
+              "src/assets/plugins/custom/datatables/datatables.bundle.css",
+              "src/assets/plugins/global/plugins.bundle.css",
+              "src/assets/css/style.bundle.css",
+              "node_modules/flatpickr/dist/flatpickr.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js",
+              "src/assets/plugins/custom/datatables/datatables.bundle.js",
+              "src/assets/js/widgets.bundle.js",
+              "src/assets/js/custom/widgets.js",
+              "src/assets/js/custom/apps/chat/chat.js",
+              "src/assets/js/custom/utilities/modals/create-app.js",
+              "src/assets/js/custom/utilities/modals/create-campaign.js",
+              "src/assets/js/custom/utilities/modals/users-search.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
+                  "maximumWarning": "8mb",
+                  "maximumError": "8mb"
+               },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "20mb",
+                  "maximumError": "25mb"
                 }
               ],
               "fileReplacements": [
@@ -94,6 +114,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.css"
             ],
             "scripts": []

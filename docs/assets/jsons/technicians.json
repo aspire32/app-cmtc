@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "libelle": "technicien-2",
+    "observation": "",
+    "sorties": [],
+    "created_at": "2022-12-09T02:54:22.874060Z",
+    "updated_at": null,
+    "technicianId": "tc-TKaQWTx8zJ"
+  },
+  {
+    "id": 1,
+    "libelle": "technicien-1",
+    "observation": "",
+    "sorties": [],
+    "created_at": "2022-12-09T02:54:09.655055Z",
+    "updated_at": null,
+    "technicianId": "tc-WFiItfsLlY"
+  }
+]

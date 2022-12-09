@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin123",
+    "roles": [
+      {
+        "id": 1,
+        "name": "ROLE_ADMIN"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "username": "achat",
+    "email": "achat@gmail.com",
+    "password": "achat123",
+    "roles": [
+      {
+        "id": 1,
+        "name": "ROLE_ACHAT"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "username": "technicien",
+    "email": "technicien@gmail.com",
+    "password": "technicien123",
+    "roles": [
+      {
+        "id": 1,
+        "name": "ROLE_TECHNICIEN"
+      }
+    ]
+  }
+]
